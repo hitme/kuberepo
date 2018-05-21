@@ -12,5 +12,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs
   nfs:
-    path: /var/nfs/data/pv-1
+    path: /var/data/nfs/pv-1
     server: 10.0.2.10

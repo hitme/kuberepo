@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: prometheus-pv001
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: small
+  nfs:
+    path: /var/data/nfs/alertprometheus/
+    server: 192.168.99.10
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: prometheus-pv002
+spec:
+  capacity:
+    storage: 8Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: big
+  nfs:
+    path: /var/data/nfs/prometheus/
+    server: 192.168.99.10

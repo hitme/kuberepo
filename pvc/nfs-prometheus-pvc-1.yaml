@@ -1,0 +1,23 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: prometheus-alert01
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: small
+  resources:
+    requests:
+      storage: 2Gi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: prometheus01
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: big
+  resources:
+    requests:
+      storage: 8Gi
